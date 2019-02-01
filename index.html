@@ -1,0 +1,114 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h2>xss pay</h2>
+    <section id='landing'>
+      <form class="signUpForm">
+        <h4>getting started</h4>
+        <label>Name</label>
+        <input class="u-full-width" type="text" placeholder="banana apple kiwi" id="userName">
+        <label>Email</label>
+        <input class="u-full-width" type="email" placeholder="hello@mailbox.com" id="userEmail">
+        <label>Password</label>
+        <input class="u-full-width" type="password" placeholder="top secret" id="userPassword">
+        <input class="button-primary" type="submit" value="sign up">
+      </form>
+
+      <form class="loginForm">
+        <h4>login</h4>
+        <label>Email</label>
+        <input class="u-full-width" type="email" placeholder="hello@mailbox.com" id="userEmail">
+        <label>Password</label>
+        <input class="u-full-width" type="password" placeholder="top secret" id="userPassword">
+        <input class="button-primary" type="submit" value="login">
+      </form>
+    </section>
+
+    <section id='userLanding'>
+      <h4>hello { NAME }</h4>
+      <div class='userOptions'>
+        <button>send/request payments</button>
+        <button>past transactions</button>
+        <button>account settings</button>
+        <button>log out</button>
+      </div>
+    </section>
+
+    <section id='makeTransaction'>
+      <form class="requestForm">
+        <h4>make transaction</h4>
+        <label>Requesting from</label>
+        <input class="u-full-width" type="email" placeholder="hello@mailbox.com" id="requestUser">
+
+        <div class='twelve columns'>
+          <div class='six columns'>
+            <label>Amount</label>
+            <input class="u-full-width" type="number" placeholder="10.00" id="requestAmount">
+          </div>
+
+          <div class='six columns'>
+            <label>Reason for contacting</label>
+            <select class="u-full-width" id="requestReason">
+              <option value="REQUESTING">Requesting</option>
+              <option value="PAYING">Paying</option>
+            </select>
+          </div>
+        </div>
+
+        <input class="button-primary" type="submit" value="Make transaction">
+      </form>
+
+    </section>
+
+    <section id='searchTransactions'>
+      <input class="u-full-width" type="text" placeholder="search xsspay" id="searchQuery">
+
+      <table class="u-full-width">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Amount</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>banana</td>
+              <td>hello@hi.com</td>
+              <td>+$10.50</td>
+              <td>Deposit</td>
+            </tr>
+            <tr>
+              <td>kiwi</td>
+              <td>wow@fruit.com</td>
+              <td>-$20.50</td>
+              <td>Withdrawal</td>
+            </tr>
+          </tbody>
+        </table>
+    </section>
+
+    <section id='accountSettings'>
+        <form class="accountForm">
+            <h4>account settings</h4>
+            <label>Name</label>
+            <input class="u-full-width" type="text" placeholder="banana apple kiwi" id="userName">
+            <label>Email</label>
+            <input class="u-full-width" type="email" placeholder="hello@mailbox.com" id="userEmail">
+            <label>Password*</label>
+            <input class="u-full-width" type="password" placeholder="top secret" id="userPassword">
+
+            <input class="button-primary" type="submit" value="Update Account">
+          </form>
+    </section>
+  </div>
+</body>
+
+</html>
