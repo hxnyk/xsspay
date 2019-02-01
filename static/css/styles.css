@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background-image: url("img/geometry2.png");
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80vh;
+}
+
+#landing {
+  display: none;
+}
+
+.startForm {
+  width: 60%;
+  padding: 2em;
+  padding-top: 0;
+}
+
+#userLanding {
+  display: none;
+}
+
+.userOptions {
+  display: flex;
+  flex-direction: column;
+}
+
+#makeTransaction {
+  display: none;
+}
+
+#searchTransactions {
+  display: none;
+}
+
+#accountSettings {
+  /* display: none; */
+}
