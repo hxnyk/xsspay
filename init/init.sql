@@ -18,3 +18,6 @@ CREATE TABLE sessions (
 	token VARCHAR(64),
 	expire INT
 );
+CREATE USER 'xsspay'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON * . * to 'xsspay'@'localhost';
+FLUSH PRIVILEGES;
