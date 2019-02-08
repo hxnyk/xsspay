@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  height: 100vh;
+  display: flex;
   background-image: url("/img/geometry2.png");
 }
 
@@ -8,17 +8,17 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 80vh;
+  padding: 4em;
+  background-color: #ffffff66;
 }
+
+.signUpLink {
+  color: blue;
+  text-decoration: none; /* no underline */
+} 
 
 #landing {
   display: none;
-}
-
-.startForm {
-  width: 60%;
-  padding: 2em;
-  padding-top: 0;
 }
 
 #dashboard {
