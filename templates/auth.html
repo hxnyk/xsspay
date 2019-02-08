@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 {% block content %}
-<form>
+<form action="/" method="POST">
   <label>Username</label>
-  <input class="u-full-width" type="text" placeholder="super cool user" id="userName">
+  <input class="u-full-width" type="text" placeholder="super cool user" name="username">
   <label>Password</label>
-  <input class="u-full-width" type="password" placeholder="top secret" id="userPassword">
+  <input class="u-full-width" type="password" placeholder="top secret" name="password">
 
-  <button name="login" class="button-primary">log in</button>
-  <button name="signup" value="sign up">sign up</button>
+  <input type="submit" name="login" class="button-primary">log in</input>
+  <input type="submit" name="signup" value="sign up">sign up</input>
 </form>
 {% endblock %}

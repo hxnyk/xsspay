@@ -28,6 +28,7 @@ def register(path, methods=['GET']):
         # Set wrapper name to wrapped function for flask mapping
         inner_wrapper.__name__ = func.__name__
         app.route(path, methods=methods)(inner_wrapper)
+
         return inner_wrapper
     return inner_web
 

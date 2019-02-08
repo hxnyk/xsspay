@@ -1,10 +1,13 @@
-import web
-
 from flask import app, render_template, request, send_from_directory
 from flask import Flask
+import web
 
 app = Flask(__name__)
 web.app = app
+
+import services
+import handlers
+
 
 '''
 app.py
@@ -30,9 +33,3 @@ def load_css(path):
 @web.register("/img/<path:path>")
 def load_img(path):
     return send_from_directory("static/img", path)
-
-# -----------------------------------------
-
-@web.register("/")
-def index():
-    return render_template('auth.html')
