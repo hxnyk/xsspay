@@ -12,6 +12,10 @@ body {
   background-color: #ffffff66;
 }
 
+.backTitle {
+  text-decoration: none;
+}
+
 .titleBalance {
   display: flex;
   justify-content: space-between;
