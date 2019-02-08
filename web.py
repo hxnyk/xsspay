@@ -16,11 +16,11 @@ def register(path, methods=['GET']):
                 auth_index = func.__code__.co_varnames[::-1].index(AUTH_ARG)
 
                 # Check if auth has a default value set -- (2 < 0) or (0 < 1)
-                is_strict_auth = not auth_index < len(func.__defaults__)
+                is_strict_auth = not func.__defaults__ or not auth_index < len(func.__defaults__)
 
                 auth = grab_auth()
 
-                if is_strict_auth and not auth:
+                if is_strict_auth and not auth["uid"]:
                     return Response("Unauthorized", 401)
                 return func(auth=auth, *args, **kwargs)
             return func(*args, **kwargs)
@@ -48,5 +48,5 @@ def grab_auth():
 
         # fetch session, verify expiration, grab uid
         auth = get_uid_from_session(token)
-        return auth
+        return {"uid": auth, "session": token}
     return None

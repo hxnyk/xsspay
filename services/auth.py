@@ -59,3 +59,7 @@ def login_user(username, password):
             return token
 
         return None
+
+def logout_user(session):
+    with db.connect() as cursor:
+        cursor.execute("DELETE FROM sessions WHERE token = %s", (session,))
