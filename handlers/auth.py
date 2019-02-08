@@ -20,4 +20,11 @@ def index_handler_post():
         return redirect("/")
     else:
         # do auth
-        return "ERR"
+        session = services.auth.login_user(request.form.get("username"), request.form.get("password"))
+
+        if session:
+            # cookie here
+            
+            return redirect("/dashboard")
+        
+        return redirect("/")
