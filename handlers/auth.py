@@ -25,11 +25,16 @@ def index_handler_post():
         if session:
             # cookie here
             response = redirect("/dashboard")
-            response.set_cookie(web.AUTH_COOKIE, session)
+            response.set_cookie(web.AUTH_COOKIE, session, samesite='Lax')
 
             return response
         
         return redirect("/")
 
-@web.register("/logout"):
-    return
+@web.register("/logout")
+def logout_handler_get(auth):
+    services.auth.logout_user(auth["session"])
+
+    response = redirect("/")
+    response.set_cookie(web.AUTH_COOKIE, '', expires=0, samesite='Lax')
+    return response
