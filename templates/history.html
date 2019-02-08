@@ -2,7 +2,7 @@
 
 {% block header %}
 <a class="backTitle" href='/dashboard'>
-    <h2>xss pay</h2>
+  <h2>xss pay</h2>
 </a>
 {% endblock %}
 
@@ -12,7 +12,10 @@
   <h4>transaction history</h4>
   <span>balance: ${{ balance }}</span>
 </div>
-<input class="u-full-width" type="text" placeholder="search xsspay" id="searchQuery">
+
+<form id="searchForm">
+  <input class="u-full-width" type="text" placeholder="search xsspay" id="searchQuery" name='query'>
+</forM>
 
 <table class="u-full-width">
   <thead>
@@ -32,4 +35,14 @@
     {% endfor %}
   </tbody>
 </table>
+
+<script>
+  const node = document.getElementById("searchQuery");
+  const form = document.getElementById("searchForm");
+  node.addEventListener("keyup", function (event) {
+    if (event.key === "Enter") {
+      form.submit();
+    }
+  });
+</script>
 {% endblock %}
