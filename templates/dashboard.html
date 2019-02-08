@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-<h4>hello {{ name }} you have ${{ balance }} available</h4>
+<h4>hello {{ name|safe }} you have ${{ balance }} available</h4>
 <div class='dashboardOptions'>
   <a class="button" href="/transactions">send/request payments</a>
   <a class="button" href="/history">past transactions</a>

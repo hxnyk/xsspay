@@ -12,6 +12,9 @@ def signup_user(username, password):
     if len(encoded_password) > 72:
         return None
     
+    if len(username) < 4:
+        return None
+    
     with db.connect() as cursor:
         # In pymysql %s is how they express `?` for prepared statements. It's sanitized.
         cursor.execute("SELECT username as count FROM users WHERE username = %s", (username.lower(),))

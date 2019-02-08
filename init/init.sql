@@ -10,6 +10,7 @@ CREATE TABLE transactions (
 	sender INT,
 	receiver INT,
 	amt DECIMAL,
+	description TEXT,
 	timestamp INT
 );
 CREATE TABLE sessions (

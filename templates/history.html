@@ -15,7 +15,11 @@
 
 <form id="searchForm">
   <input class="u-full-width" type="text" placeholder="search xsspay" id="searchQuery" name='query'>
-</forM>
+</form>
+
+{% if query %}
+<p>Search for <i>"{{query|safe}}"</i> not implemented.</p>
+{% endif %}
 
 <table class="u-full-width">
   <thead>
@@ -23,6 +27,7 @@
       <th>Name</th>
       <th>Amount</th>
       <th>Type</th>
+      <th>Desc</th>
     </tr>
   </thead>
   <tbody>
@@ -31,6 +36,7 @@
       <td>{{item.name}}</td>
       <td>{{item.amount}}</td>
       <td>{{item.type}}</td>
+      <td>{{item.description|safe}}</td>
     </tr>
     {% endfor %}
   </tbody>
