@@ -1,9 +1,10 @@
-<section id='dashboard'>
-  <h4>hello {{ username }}</h4>
-  <div class='userOptions'>
-    <button>send/request payments</button>
-    <button>past transactions</button>
-    <button>account settings</button>
-    <button>log out</button>
-  </div>
-</section>
+{% extends "layout.html" %}
+{% block content %}
+<h4>hello {{ user.name }}</h4>
+<div class='dashboardOptions'>
+  <button>send/request payments</button>
+  <button>past transactions</button>
+  <button>account settings</button>
+  <button>log out</button>
+</div>
+{% endblock %}
