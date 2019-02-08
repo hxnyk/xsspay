@@ -53,6 +53,10 @@ def get_readable_transactions_for_user(uid):
 
     results = []
 
+    # prevent weird bug when no transactions
+    if type(transactions) is tuple:
+        return []
+
     transactions.sort(key=lambda x: x["timestamp"], reverse=True)
 
     for transaction in transactions:
