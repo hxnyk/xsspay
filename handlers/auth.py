@@ -1,7 +1,7 @@
 import services
 import web
 
-from flask import app, redirect, render_template, request, send_from_directory
+from flask import app, make_response, redirect, render_template, request, send_from_directory
 from flask import Flask
 
 SIGNUP_FLAG = "signup"
@@ -24,7 +24,9 @@ def index_handler_post():
 
         if session:
             # cookie here
-            
-            return redirect("/dashboard")
+            response = redirect("/dashboard")
+            response.set_cookie(web.AUTH_COOKIE, session)
+
+            return response
         
         return redirect("/")

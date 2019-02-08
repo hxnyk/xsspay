@@ -1,8 +1,10 @@
 import bcrypt
 import db
+import secrets
 import time
 
 SESSION_LENGTH = 3600
+TOKEN_LENGTH = 16
 
 def signup_user(username, password):
     encoded_password = password.encode('utf-8')
@@ -31,7 +33,7 @@ def signup_user(username, password):
         return result["id"]
 
 def login_user(username, password):
-    encoded_password = password.encoded('utf-8')
+    encoded_password = password.encode('utf-8')
     
     if len(encoded_password) > 72:
         return None
@@ -47,8 +49,13 @@ def login_user(username, password):
         uid = result["id"]
         stored_password = result["password"]
 
-        if bcrypt.checkpw(encoded_password, stored_password):
+        if bcrypt.checkpw(encoded_password, stored_password.encode('utf-8')):
             # authenticated :D
             expiration = int(time.time()) + SESSION_LENGTH
+            token = secrets.token_hex(TOKEN_LENGTH)
+
+            cursor.execute("INSERT INTO sessions (uid, token, expire) VALUES (%s, %s, %s)", (uid, token, expiration))
+
+            return token
 
         return None
