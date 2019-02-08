@@ -4,7 +4,7 @@ import pymysql
 # I found out at 1am (while drunk) that I needed to code thiss
 # And I legit couldn't be bothered to read this shit from environ variables
 # Treat this python as basically a config file huehuehue
-_HOST = "10.0.0.117"
+_HOST = "127.0.0.1"
 _USER = "xsspay"
 _PASS = "password"
 _DB = "xsspay"
