@@ -18,18 +18,18 @@ templates
 
 @app.route("/js/<path:path>")
 def load_js(path):
-  return send_from_directory("static/js", path)
+    return send_from_directory("static/js", path)
 
 @app.route("/css/<path:path>")
 def load_css(path):
-  return send_from_directory("static/css", path)
+    return send_from_directory("static/css", path)
 
 @app.route("/img/<path:path>")
 def load_img(path):
-  return send_from_directory("static/img", path)
+    return send_from_directory("static/img", path)
 
 # -----------------------------------------
 
 @app.route("/")
 def index():
-  return render_template('index.html')
+    return render_template('index.html')
