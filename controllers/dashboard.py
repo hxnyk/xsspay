@@ -12,7 +12,7 @@ def getHistory():
 
 @web.register("/transactions")
 def getTransactions():
-    return render_template('transaction.html')
+    return render_template('transactions.html')
 
 @web.register("/logout")
 def logout():
