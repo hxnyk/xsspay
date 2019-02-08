@@ -21,7 +21,7 @@ body {
   padding-top: 0;
 }
 
-#userLanding {
+#dashboard {
   display: none;
 }
 
@@ -30,14 +30,14 @@ body {
   flex-direction: column;
 }
 
-#makeTransaction {
+#transaction {
   display: none;
 }
 
-#searchTransactions {
+#history {
   display: none;
 }
 
-#accountSettings {
-  /* display: none; */
+#account {
+  display: none;
 }
