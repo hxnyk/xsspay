@@ -1,25 +1,25 @@
-<section id='transaction'>
-  <form class="requestForm">
-    <h4>make transaction</h4>
-    <label>Requesting from</label>
-    <input class="u-full-width" placeholder="username" id="requestUser">
+{% extends "layout.html" %}
+{% block content %}
+<form class="requestForm">
+  <h4>make transaction</h4>
+  <label>Requesting from</label>
+  <input class="u-full-width" placeholder="username" id="requestUser">
 
-    <div class='twelve columns'>
-      <div class='six columns'>
-        <label>Amount</label>
-        <input class="u-full-width" type="number" placeholder="10.00" id="requestAmount">
-      </div>
-
-      <div class='six columns'>
-        <label>Reason for contacting</label>
-        <select class="u-full-width" id="requestReason">
-          <option value="REQUESTING">Requesting</option>
-          <option value="PAYING">Paying</option>
-        </select>
-      </div>
+  <div class='twelve columns'>
+    <div class='six columns'>
+      <label>Amount</label>
+      <input class="u-full-width" type="number" placeholder="10.00" id="requestAmount">
     </div>
 
-    <input class="button-primary" type="submit" value="Make transaction">
-  </form>
+    <div class='six columns'>
+      <label>Reason for contacting</label>
+      <select class="u-full-width" id="requestReason">
+        <option value="REQUESTING">Requesting</option>
+        <option value="PAYING">Paying</option>
+      </select>
+    </div>
+  </div>
 
-</section>
+  <input class="button-primary" type="submit" value="Make transaction">
+</form>
+{% endblock %}

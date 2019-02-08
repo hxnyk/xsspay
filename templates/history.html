@@ -1,22 +1,23 @@
-<section id='history'>
-  <input class="u-full-width" type="text" placeholder="search xsspay" id="searchQuery">
+{% extends "layout.html" %}
+{% block content %}
+<input class="u-full-width" type="text" placeholder="search xsspay" id="searchQuery">
 
-  <table class="u-full-width">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Amount</th>
-        <th>Type</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for item in transactions %}
-      <tr>
-        <td>{{item.name}}</td>
-        <td>{{item.amount}}</td>
-        <td>{{item.type}}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</section>
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in transactions %}
+    <tr>
+      <td>{{item.name}}</td>
+      <td>{{item.amount}}</td>
+      <td>{{item.type}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

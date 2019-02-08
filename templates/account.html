@@ -1,11 +1,12 @@
-<section id='account'>
-  <form class="accountForm">
-      <h4>account settings</h4>
-      <label>Name</label>
-      <input class="u-full-width" type="text" placeholder="{{user.name}}" id="userName">
-      <label>Password*</label>
-      <input class="u-full-width" type="password" placeholder="top secret" id="userPassword">
+{% extends "layout.html" %}
+{% block content %}
+<form class="accountForm">
+  <h4>account settings</h4>
+  <label>Name</label>
+  <input class="u-full-width" type="text" placeholder="{{user.name}}" id="userName">
+  <label>Password*</label>
+  <input class="u-full-width" type="password" placeholder="top secret" id="userPassword">
 
-      <input class="button-primary" type="submit" value="Update Account">
-    </form>
-</section>
+  <input class="button-primary" type="submit" value="Update Account">
+</form>
+{% endblock %}
