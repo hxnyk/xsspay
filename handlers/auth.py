@@ -30,3 +30,6 @@ def index_handler_post():
             return response
         
         return redirect("/")
+
+@web.register("/logout"):
+    return
