@@ -33,3 +33,6 @@ def load_css(path):
 @web.register("/img/<path:path>")
 def load_img(path):
     return send_from_directory("static/img", path)
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0',port=1337)
