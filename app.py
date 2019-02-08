@@ -1,7 +1,10 @@
+import web
+
 from flask import app, render_template, request, send_from_directory
 from flask import Flask
 
 app = Flask(__name__)
+web.app = app
 
 '''
 app.py
@@ -16,20 +19,20 @@ templates
 -- index.html
 '''
 
-@app.route("/js/<path:path>")
+@web.register("/js/<path:path>")
 def load_js(path):
     return send_from_directory("static/js", path)
 
-@app.route("/css/<path:path>")
+@web.register("/css/<path:path>")
 def load_css(path):
     return send_from_directory("static/css", path)
 
-@app.route("/img/<path:path>")
+@web.register("/img/<path:path>")
 def load_img(path):
     return send_from_directory("static/img", path)
 
 # -----------------------------------------
 
-@app.route("/")
+@web.register("/")
 def index():
     return render_template('index.html')
