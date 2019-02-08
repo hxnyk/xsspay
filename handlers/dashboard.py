@@ -7,7 +7,7 @@ def getDashboard(auth):
     user = services.user.get_user(auth["uid"])
     name = user["username"]
     balance = user["balance"]
-    return render_template('dashboard.html', name=name, balance=balance)
+    return render_template('dashboard.html', username=name, balance=balance)
 
 @web.register("/account")
 def getAccount(auth):
