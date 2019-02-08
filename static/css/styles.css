@@ -12,32 +12,8 @@ body {
   background-color: #ffffff66;
 }
 
-.signUpLink {
-  color: blue;
-  text-decoration: none; /* no underline */
-} 
 
-#landing {
-  display: none;
-}
-
-#dashboard {
-  display: none;
-}
-
-.userOptions {
+.dashboardOptions {
   display: flex;
   flex-direction: column;
-}
-
-#transaction {
-  display: none;
-}
-
-#history {
-  display: none;
-}
-
-#account {
-  display: none;
 }
