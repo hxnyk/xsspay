@@ -2,9 +2,13 @@
 {% block content %}
 <h4>hello {{ name }} you have ${{ balance }} available</h4>
 <div class='dashboardOptions'>
-  <button>send/request payments</button>
-  <button>past transactions</button>
-  <button>account settings</button>
-  <button>log out</button>
+  <a class="button" href="/transactions">send/request payments</a>
+  <a class="button" href="/history">past transactions</a>
+  <a class="button" href="/account">account settings</a>
+  <a class="button" href="/auth">log out</a>
 </div>
+
+<script>
+
+</script>
 {% endblock %}

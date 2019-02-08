@@ -1,5 +1,17 @@
 {% extends "layout.html" %}
+
+{% block header %}
+<a class="backTitle" href='/dashboard'>
+    <h2>xss pay</h2>
+</a>
+{% endblock %}
+
 {% block content %}
+
+<div class="titleBalance">
+  <h4>transaction history</h4>
+  <span>balance: ${{ balance }}</span>
+</div>
 <input class="u-full-width" type="text" placeholder="search xsspay" id="searchQuery">
 
 <table class="u-full-width">

@@ -1,9 +1,16 @@
 {% extends "layout.html" %}
+
+{% block header %}
+<a class="backTitle" href='/dashboard'>
+    <h2>xss pay</h2>
+</a>
+{% endblock %}
+
 {% block content %}
 <form class="requestForm">
   <div class="titleBalance">
     <h4>add transaction</h4>
-    <span>your balance: ${{ balance }}</span>
+    <span>balance: ${{ balance }}</span>
   </div>
   <label>Recipient</label>
 
