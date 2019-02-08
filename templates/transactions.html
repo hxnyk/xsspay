@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block header %}
+<a class="backTitle" href='dashboard.html'>
+    <h2>xss pay</h2>
+</a>
+{% endblock %}
+
+{% block content %}
+<form class="requestForm">
+  <div class="titleBalance">
+    <h4>add transaction</h4>
+    <span>balance: ${{ balance }}</span>
+  </div>
+  <label>Recipient</label>
+
+  <input class="u-full-width" type="text" placeholder="username">
+
+  <div class='twelve columns'>
+    <div class='six columns'>
+      <label>Amount</label>
+      <input class="u-full-width" type="number" placeholder="10.00">
+    </div>
+
+    <div class='six columns'>
+      <label>Action</label>
+      <select class="u-full-width" id="requestReason">
+        <option value="request">Request</option>
+        <option value="pay">Pay</option>
+      </select>
+    </div>
+  </div>
+
+  <input class="button-primary" type="submit" value="Make transaction">
+</form>
+{% endblock %}
