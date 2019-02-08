@@ -8,20 +8,25 @@ AUTH_COOKIE = "xps"
 
 def web(func):
     def inner_wrapper(*args, **kwargs):
-        if "auth" in func.__code__.co_varnames:
-            auth = None
-
+        def grab_auth():
             if AUTH_COOKIE in request.cookies:
                 token = request.cookies.get(AUTH_COOKIE)
 
                 # fetch session, verify expiration, grab uid
                 auth = get_uid_from_session(token)
+                return auth
+            return None
+
+        if "auth" in func.__code__.co_varnames:
+            auth = grab_auth()
 
             if not auth:
                 return Response("Unauthorized", 401)
-
             return func(auth=auth, *args, **kwargs)
-        
+        else if "op_auth" in func.__code__.co_varnames:
+            auth = grab_auth()
+            return func(op_auth=auth, *args, **kwargs)
+
         return func(*args, **kwargs)
     
     # Set wrapper name to wrapped function for flask mapping
