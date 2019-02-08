@@ -1,21 +1,25 @@
 {% extends "layout.html" %}
 {% block content %}
 <form class="requestForm">
-  <h4>make transaction</h4>
-  <label>Requesting from</label>
-  <input class="u-full-width" placeholder="username" id="requestUser">
+  <div class="titleBalance">
+    <h4>add transaction</h4>
+    <span>your balance: ${{ balance }}</span>
+  </div>
+  <label>Recipient</label>
+
+  <input class="u-full-width" type="text" placeholder="username">
 
   <div class='twelve columns'>
     <div class='six columns'>
       <label>Amount</label>
-      <input class="u-full-width" type="number" placeholder="10.00" id="requestAmount">
+      <input class="u-full-width" type="number" placeholder="10.00">
     </div>
 
     <div class='six columns'>
-      <label>Reason for contacting</label>
+      <label>Action</label>
       <select class="u-full-width" id="requestReason">
-        <option value="REQUESTING">Requesting</option>
-        <option value="PAYING">Paying</option>
+        <option value="request">Request</option>
+        <option value="pay">Pay</option>
       </select>
     </div>
   </div>

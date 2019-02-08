@@ -12,6 +12,11 @@ body {
   background-color: #ffffff66;
 }
 
+.titleBalance {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
 
 .dashboardOptions {
   display: flex;
