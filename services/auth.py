@@ -12,7 +12,7 @@ def signup_user(username, password):
     if len(encoded_password) > 72:
         return None
     
-    if len(username) < 4:
+    if len(username) < 3:
         return None
     
     with db.connect() as cursor:
