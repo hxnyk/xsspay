@@ -1,4 +1,4 @@
 # xsspay
-💰 An intentionally insecure payment web app 💰
+💰 An intentionally insecure web app 💰
 
-**Intent:** To help people better recognize xss
+**goal:** to help people identify & recognize reflected/stored/DOM XSS
